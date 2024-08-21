@@ -14,13 +14,8 @@ def nombre(req, nombre):
 
 def plantilla(req):
     miHtml = open('miProyecto/plantillas/plantilla1.html')
-
     plantilla = Template(miHtml.read())
-
     miHtml.close()
-
     miContexto = Context()
-
     documento = plantilla.render(miContexto)
-
     return HttpResponse(documento)
