@@ -3,8 +3,10 @@ from datetime import date, datetime
 from django.template import Template, Context
 from django.template import loader
 
+from miAplicacion.models import Grupos, Supervisores, Usuarios
+import random
 
-
+""" 
 def saludo(req):
     return HttpResponse("Hola Django - Coder")
 
@@ -61,5 +63,15 @@ def plantilla4(req):
     
     plantilla = loader.get_template('plantilla1.html')
     documento = plantilla.render(diccionario)
-    return HttpResponse(documento)
+    return HttpResponse(documento) 
 
+"""
+
+def agregaGrupo(req, nom, idi):
+
+    cod = str(random.randint(10000,99999))
+    sta = "A"
+    grupo = Grupos(codigo=cod, nombre=nom, idioma=idi, estado=sta, creacion=date.today())
+    grupo.save()
+
+    return HttpResponse("Se agregó el grupo")

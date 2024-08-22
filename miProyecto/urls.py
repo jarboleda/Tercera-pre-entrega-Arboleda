@@ -20,6 +20,14 @@ from miProyecto import views #saludo, dia_hoy, nombre, plantilla, plantilla2, pl
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('agregarGrupo/<nom>/<idi>', views.agregaGrupo),
+
+]
+
+
+""" 
+urlpatterns = [
+    path('admin/', admin.site.urls),
     path('saludo/', views.saludo),
     path('dia_hoy/', views.dia_hoy),
     path('nombre/<nombre>', views.nombre),
@@ -27,6 +35,9 @@ urlpatterns = [
     path('plantilla2/', views.plantilla2),
     path('plantilla3/', views.plantilla3),
     path('plantilla4/', views.plantilla4),
+    path('agregarGrupo/<nom>/<idi>', views.agregaGrupo),
+
 ]
 
+ """
 
