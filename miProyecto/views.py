@@ -1,6 +1,9 @@
 from django.http import HttpResponse
-from datetime import date
+from datetime import date, datetime
 from django.template import Template, Context
+from django.template import loader
+
+
 
 def saludo(req):
     return HttpResponse("Hola Django - Coder")
@@ -19,3 +22,44 @@ def plantilla(req):
     miContexto = Context()
     documento = plantilla.render(miContexto)
     return HttpResponse(documento)
+
+def plantilla2(req):
+    nom = 'Javier'
+    ape = 'Arboleda'
+
+    diccionario = {"nombre": nom, "apellido": ape, "hoy": datetime.now()}
+
+    miHtml = open('miProyecto/plantillas/plantilla1.html')
+    plantilla = Template(miHtml.read())
+    miHtml.close()
+    miContexto = Context(diccionario)
+    documento = plantilla.render(miContexto)
+    return HttpResponse(documento)
+
+def plantilla3(req):
+
+    nom = 'Javier'
+    ape = 'Arboleda'
+
+    listadenotas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    diccionario = {"nombre": nom, "apellido": ape, "hoy": datetime.now(), "notas": listadenotas}
+
+    miHtml = open('miProyecto/plantillas/plantilla1.html')
+    plantilla = Template(miHtml.read())
+    miHtml.close()
+    miContexto = Context(diccionario)
+    documento = plantilla.render(miContexto)
+    return HttpResponse(documento)
+
+def plantilla4(req):
+
+    nom = 'Javier'
+    ape = 'Arboleda'
+
+    listadenotas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    diccionario = {"nombre": nom, "apellido": ape, "hoy": datetime.now(), "notas": listadenotas}
+    
+    plantilla = loader.get_template('plantilla1.html')
+    documento = plantilla.render(diccionario)
+    return HttpResponse(documento)
+
