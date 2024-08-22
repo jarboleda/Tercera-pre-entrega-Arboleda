@@ -3,10 +3,11 @@ from . import views
 
 
 urlpatterns = [
-    path('inicio/', views.Inicio),
-    path('grupos/', views.Grupos),
-    path('supervisores/', views.Supervisores),
-    path('usuarios/', views.Usuarios),
+    path('', views.Inicio),
+    path('inicio/', views.Inicio, name='inicio'),
+    path('grupos/', views.Grupos, name='grupos'),
+    path('supervisores/', views.Supervisores, name='supervisores'),
+    path('usuarios/', views.Usuarios, name='usuarios'),
 
 
 ]

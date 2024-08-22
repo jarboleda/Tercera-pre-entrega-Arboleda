@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+import random
+from datetime import date
 
 # Create your views here.
 
@@ -16,3 +17,12 @@ def Supervisores(req):
 def Usuarios(req):
     return render(req, "miaplicacion/usuarios.html")
 
+
+def agregaGrupo(req, nom, idi):
+
+    cod = str(random.randint(10000,99999))
+    sta = "A"
+    grupo = Grupos(codigo=cod, nombre=nom, idioma=idi, estado=sta, creacion=date.today())
+    grupo.save()
+
+    return HttpResponse("Se agregó el grupo")

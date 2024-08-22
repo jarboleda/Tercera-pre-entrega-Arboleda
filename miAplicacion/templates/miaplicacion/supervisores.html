@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisores</title>
 </head>
-<body  style="background-color:antiquewhite">
+<body>
     
-    <h1> Esto es SUPERVISORES</h1>
+    {% extends "miAplicacion/index.html" %}
+    {% load static %}
+    {% block bloqueSupervisores %}
+
+    <section id="supervisores">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Supervisores Registrados</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+
 </body>
 </html>
