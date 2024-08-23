@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/miAplicacion/buscar/" method="GET">
+        {% csrf_token %}
+        <input type="hidden" name="tipo" id="tipo" value="1">
+        <input type="number" name="codigo" id="codigo">
+        <input type="submit" value="Buscar">
+    </form>    
+
+    {% if datos %}
+    <p> Se Encontró: {{ codigo }}</p>
+    <ul>
+        {% for dato in datos %}
+            <li>{{ dato.codigo }}</li>
+            <li>{{ dato.nombre }}</li>
+            <li>{{ dato.idioma }}</li>
+            <li>{{ dato.estado }}</li>
+            <li>{{ dato.creacion }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> No se encontró ningún dato con el código: {{ codigo }}</p>
+    {% endif %}
+
+</body>
+</html>
