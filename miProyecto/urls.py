@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from miProyecto import views #saludo, dia_hoy, nombre, plantilla, plantilla2, plantilla3, plantilla4
+from miProyecto import views 
 from miAplicacion import views
 
 urlpatterns = [
@@ -26,19 +26,4 @@ urlpatterns = [
 ]
 
 
-""" 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('saludo/', views.saludo),
-    path('dia_hoy/', views.dia_hoy),
-    path('nombre/<nombre>', views.nombre),
-    path('plantilla/', views.plantilla),
-    path('plantilla2/', views.plantilla2),
-    path('plantilla3/', views.plantilla3),
-    path('plantilla4/', views.plantilla4),
-    path('agregarGrupo/<nom>/<idi>', views.agregaGrupo),
-
-]
-
- """
 

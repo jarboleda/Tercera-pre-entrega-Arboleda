@@ -17,6 +17,15 @@ def Supervisores(req):
 def Usuarios(req):
     return render(req, "miaplicacion/usuarios.html")
 
+def gruposForm(req):
+    return render(req, 'miaplicacion/gruposForm.html')
+
+def supervisoresForm(req):
+    return render(req, 'miaplicacion/supervisoresForm.html')
+
+def usuariosForm(req):
+    return render(req, 'miaplicacion/usuariosForm.html')
+
 
 def agregaGrupo(req, nom, idi):
 
