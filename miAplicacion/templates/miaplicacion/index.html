@@ -20,9 +20,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'grupos' %}#grupos">Grupos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'supervisores' %}#supervisores">Supervisores</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'usuarios' %}#usuarios">Usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'gruposList' %}#grupos">Grupos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'supervisoresList' %}#supervisores">Supervisores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'usuariosList' %}#usuarios">Usuarios</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,26 +32,10 @@
             <div class="container px-4 text-center">
                 <h1 class="fw-bolder">Bienvenido a la tercera pre-entrega de Javier Arboleda</h1>
                 <p class="lead">Esto es una plantilla funcional de un sistema de administración de usuarios</p>
+                <p class="lead">En ésta página se pueden visualizar datos registrados y tiene formularios para el registro de información de Grupos, Supervisores y Usuarios.</p>
             </div>
         </header>
-        <!-- About section-->
-        <section id="inicio">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>Acerca de ésta página</h2>
-                        <p class="lead">En ésta página se pueden visualizar datos registrados y tiene formularios para el registro de información de Grupos, Supervisores y Usuarios. Puede usar los links superiores o las listas de abajo para acceder a las páginas internas.</p>
-                        <p class="Lorem">El orden de registro de datos es según se indica en la lista:</p>
-                        <ul>
-                            <li>1.- Ver lista y agregar Grupos : <a class="btn btn-sm btn-light" href="{% url 'grupos' %}#grupos">GRUPOS</a></li>
-                            <li>2.- Ver lista y agregar Supervisores : <a class="btn btn-sm btn-light" href="{% url 'supervisores' %}#supervisores">SUPERVISORES</a></li>
-                            <li>3.- Ver lista y agregar Usuarios : <a class="btn btn-sm btn-light" href="{% url 'usuarios' %}#usuarios">USUARIOS</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+       
         {% block bloqueGrupos %}
         {% endblock %}
 
