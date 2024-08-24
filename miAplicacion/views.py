@@ -88,45 +88,17 @@ def buscar(req):
 
         if tipo == '1':
             obj = Grupos
-            durl = 'miaplicacion/gruposBuscar.html'
         elif tipo == '2':
             obj = Supervisores
-            durl = 'miaplicacion/supervisoresBuscar.html'
         else:
             obj = Usuarios
-            durl = 'miaplicacion/usuariosBuscar.html'
-
-        # print(durl)
 
         datos = obj.objects.filter(codigo__icontains=cod)
 
-        # print(dato)
-
-        return render(req, 'miaplicacion/gruposBuscar.html', {'datos': datos, 'codigo': cod})
-    
+        return render(req, 'miaplicacion/resultados.html', {'datos': datos, 'codigo': cod, 'tipo': tipo})
+  
     else:
-        respuesta = 'No enviaste datos'
-
-    return HttpResponse(respuesta)
-
-
-
-def gruposBuscar(req):
-# Vista para buscar en grupos
-
-    return render(req, 'miaplicacion/gruposBuscar.html')
-
-
-def supervisoresBuscar(req):
-# Vista para buscar en Supervisores
-    
-    return render(req, 'miaplicacion/supervisoresBuscar.html')    
-
-
-def usuariosBuscar(req):
-# Vista para buscar en los usuarios
-
-    return render(req, 'miaplicacion/usuariosBuscar.html')
+        return render(req, 'miaplicacion/index.html')
 
 
 def nuevoForm(req):

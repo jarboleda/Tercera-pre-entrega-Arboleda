@@ -20,11 +20,32 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Búsquedas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'gruposList' %}#grupos">Grupos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'supervisoresList' %}#supervisores">Supervisores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'usuariosList' %}#usuarios">Usuarios</a></li>
                     </ul>
+
+                    <form action="/miAplicacion/buscar/" method="GET">
+                        {% csrf_token %}
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm" name="tipo" id="tipo">
+                                        <option selected>Seleccione..</option>
+                                        <option value="1">Grupos</option>
+                                        <option value="2">Supervisores</option>
+                                        <option value="3">Usuarios</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-control form-control-sm" type="search" placeholder="Buscar.." name="codigo" id="codigo">
+                                </div>
+                                <div class="col-2">
+                                    <input type="submit" class="btn btn-sm btn-primary" value="Buscar Resultados">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -36,7 +57,10 @@
                 <p class="lead">En ésta página se pueden visualizar datos registrados y tiene formularios para el registro de información de Grupos, Supervisores y Usuarios.</p>
             </div>
         </header>
-       
+
+        {% block bloqueBusqueda %}
+        {% endblock %}
+
         {% block bloqueGrupos %}
         {% endblock %}
 
